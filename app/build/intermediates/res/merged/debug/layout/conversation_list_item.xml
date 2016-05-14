@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ekbana.smsscheduler.ConversationListItem xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:id="@+id/main_layout"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:paddingRight="10dip">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:orientation="horizontal">
+       <!-- <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/round_bottom"
+            android:layout_height="wrap_content">-->
+    <ImageView
+        android:id="@+id/name_icon_test"
+        android:layout_gravity="center"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        />
+        <!--</FrameLayout>-->
+        <!--<ImageView
+            android:id="@+id/nam"
+            android:layout_gravity="center"
+            android:layout_width="25dp"
+            android:visibility="invisible"
+            android:src="@drawable/avatar_small"
+            android:layout_height="25dp"
+            />-->
+    <TextView android:id="@+id/from"
+        android:layout_gravity="center"
+        android:layout_toEndOf="@+id/name_icon"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMediumInverse"
+        android:textColor="@android:color/white"
+        android:singleLine="true"
+        android:textSize="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:text="From Field"
+        android:ellipsize="marquee"  />
+
+    </LinearLayout>
+
+    <TextView android:id="@+id/date"
+        android:layout_marginTop="2dip"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="5dip"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmallInverse"
+        android:textColor="@android:color/black"
+        android:singleLine="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible"/>
+    <ImageView android:id="@+id/error"
+        android:layout_marginLeft="3dip"
+        android:visibility="invisible"
+        android:layout_toLeftOf="@id/date"
+        android:layout_alignBottom="@id/date"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_list_alert_sms_failed" />
+
+    <TextView android:id="@+id/subject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmallInverse"
+        android:textColor="@android:color/holo_blue_bright"
+        android:singleLine="true"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="170dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/date"
+        android:ellipsize="end" />
+   <!-- <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="16dp"
+        android:textColor="@android:color/black"
+        android:text="Dinesh shwo everywhere" />-->
+
+</com.ekbana.smsscheduler.ConversationListItem>

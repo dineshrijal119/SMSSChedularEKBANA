@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <EditText
+        android:id="@+id/subject"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:autoText="true"
+        android:inputType="number"
+        android:capitalize="sentences"
+        android:hint="To"
+        android:maxLength="40"
+        android:singleLine="true" />
+        <ImageButton
+            android:id="@+id/from_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:src="@drawable/select_from_contact"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:background="@color/white_med"
+        android:id="@+id/history"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.0"
+        android:fadingEdge="none"
+        android:stackFromBottom="true"
+        android:divider="@null"
+        android:dividerHeight="0dp"/>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/text_editor"
+
+            android:background="@drawable/preseed"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_marginRight="7dp"
+            android:layout_weight="1.0"
+            android:hint=" Enter a message"
+            android:inputType="textShortMessage|textAutoCorrect|textCapSentences|textMultiLine"
+            />
+
+    <FrameLayout
+    android:layout_width="35dp"
+    android:layout_height="wrap_content"
+     android:background="@drawable/round_bottom_small">
+        <Button
+            android:id="@+id/send_button"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="@drawable/arrow"
+             android:textColor="@color/black"/>
+     </FrameLayout>
+    </LinearLayout>
+</LinearLayout>
+

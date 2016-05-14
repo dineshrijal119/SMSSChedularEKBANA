@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+            <LinearLayout
+                android:id="@+id/clicktohide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+                <AutoCompleteTextView
+                    android:id="@+id/form_input_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_hint_contact"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/form_input_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_hint_message"
+                    android:inputType="textCapSentences|textMultiLine" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_cancel"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/schedule_pressed"
+                    android:onClick="unscheduleSms"
+                    android:text="@string/form_button_cancel"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/button_add"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@color/white_med"
+                    android:background="@drawable/schedule_pressed"
+                    android:onClick="scheduleSms"
+                    android:text="@string/form_button_add" />
+            </LinearLayout>
+            <TimePicker
+                android:id="@+id/form_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:timePickerMode="spinner" />
+            <com.ekbana.smsscheduler.Schedule.custumclasses.DataPickerCustum
+                android:id="@+id/form_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

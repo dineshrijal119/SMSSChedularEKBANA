@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/iteamSend"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/msgr"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/textview_send"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+        <TextView
+            android:id="@+id/msgrDate"
+            android:text="date"
+            android:textColor="#9e9b9b"
+            android:layout_marginTop="-10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="bottom|right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="-10dp"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/msgrr"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/textview"
+        android:paddingBottom="8dp"
+        android:paddingTop="5dp"
+        android:textColor="#000"
+        android:visibility="gone" />
+        <TextView
+            android:id="@+id/msgrrDate"
+            android:text="date"
+            android:textColor="#9e9b9b"
+            android:layout_marginTop="-10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="bottom|right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+        </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ekbana.smsscheduler"
+    android:versionCode="1"
+    android:versionName="0.1" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.EDIT_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_MMS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        name="com.ekbana.smsscheduler.Schedule.Instant.SMSApp"
+        android:name="com.android.tools.fd.runtime.BootstrapApplication"
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_scheme"
+        android:icon="@drawable/sms_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.ekbana.smsscheduler.SplashScreenActivity"
+            android:noHistory="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ekbana.smsscheduler.ConversationList"
+            android:configChanges="orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme" >
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.SENDTO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="sms" />
+                <data android:scheme="smsto" />
+                <data android:scheme="mms" />
+                <data android:scheme="mmsto" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ekbana.smsscheduler.Schedule.SmsListActivity"
+            android:launchMode="singleTop" >
+        </activity>
+        <activity
+            android:name="com.ekbana.smsscheduler.ComposeMessageActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.ekbana.smsscheduler.Schedule.AddSmsActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.ekbana.smsscheduler.Schedule.SmsSchedulerPreferenceActivity" />
+
+        <receiver
+            android:name="com.ekbana.smsscheduler.Schedule.BootReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.ekbana.smsscheduler.Schedule.AlarmReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.ekbana.smsscheduler.Schedule.AlarmReceiver.INTENT_FILTER" />
+            </intent-filter>
+        </receiver>
+        <!-- <receiver android:name="com.ekbana.smsscheduler.Schedule.SmsSentReceiver" /> -->
+
+        <service
+            android:name="com.ekbana.smsscheduler.Schedule.SmsSenderService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.ekbana.smsscheduler.Schedule.AlarmReceiver.INTENT_FILTER" />
+            </intent-filter>
+        </service>
+        <service android:name="com.ekbana.smsscheduler.Schedule.SmsSentService" />
+        <service android:name="com.ekbana.smsscheduler.Schedule.SmsDeliveredService" />
+
+        <receiver
+            android:name="com.ekbana.smsscheduler.SmsReceiver"
+            android:permission="android.permission.BROADCAST_SMS" >
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_DELIVER" />
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- BroadcastReceiver that listens for incoming MMS messages -->
+        <receiver
+            android:name="com.ekbana.smsscheduler.MmsReceiver"
+            android:permission="android.permission.BROADCAST_WAP_PUSH" >
+            <intent-filter>
+                <action android:name="android.provider.Telephony.WAP_PUSH_DELIVER" />
+
+                <data android:mimeType="application/vnd.wap.mms-message" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.ekbana.smsscheduler.HeadlessSmsSendService"
+            android:exported="true"
+            android:permission="android.permission.SEND_RESPOND_VIA_MESSAGE" >
+            <intent-filter>
+                <action android:name="android.intent.action.RESPOND_VIA_MESSAGE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="sms" />
+                <data android:scheme="smsto" />
+                <data android:scheme="mms" />
+                <data android:scheme="mmsto" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

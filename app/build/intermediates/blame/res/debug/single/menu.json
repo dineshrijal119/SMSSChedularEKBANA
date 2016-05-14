@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/dinesh/AndroidStudioProjects/schedulesms/app/build/intermediates/res/merged/debug/menu/context_menu.xml",
+        "source": "/home/dinesh/AndroidStudioProjects/schedulesms/app/src/main/res/menu/context_menu.xml"
+    },
+    {
+        "merged": "/home/dinesh/AndroidStudioProjects/schedulesms/app/build/intermediates/res/merged/debug/menu/menu_schedule.xml",
+        "source": "/home/dinesh/AndroidStudioProjects/schedulesms/app/src/main/res/menu/menu_schedule.xml"
+    },
+    {
+        "merged": "/home/dinesh/AndroidStudioProjects/schedulesms/app/build/intermediates/res/merged/debug/menu/main.xml",
+        "source": "/home/dinesh/AndroidStudioProjects/schedulesms/app/src/main/res/menu/main.xml"
+    }
+]
